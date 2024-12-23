@@ -3,9 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/carscatalogpage.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_application_1/pages/newspage.dart';
 
 import 'pages/homepage.dart';
-import 'pages/newspage.dart';
 
 final _parentKey = GlobalKey<NavigatorState>();
 final _shellKey = GlobalKey<NavigatorState>();
@@ -23,27 +23,28 @@ Page<void> noTransitionPageBuilder(
 
 final router = GoRouter(navigatorKey: _parentKey, routes: [
   ShellRoute(
-    navigatorKey: _shellKey,
-    builder: (context, state, child) => HomePage(child: child),
-    routes: [
-      GoRoute(
-        path: "/",
-        name: 'news',
-        parentNavigatorKey: _shellKey,
-        pageBuilder: (context, state) => noTransitionPageBuilder(
-          context,
-          state,
-          const Newspage(),
+      navigatorKey: _shellKey,
+      builder: (context, state, child) => HomePage(
+            child: child,
+          ),
+      routes: [
+        GoRoute(
+          path: '/',
+          name: 'news',
+          parentNavigatorKey: _shellKey,
+          pageBuilder: (context, state) => noTransitionPageBuilder(
+            context,
+            state,
+            const Newspage(),
+          ),
         ),
-      ),
-      GoRoute(
-        path: CarsCatalogPage
-            .route, // Здесь используй CarsCatalogPage.route вместо CarsCatalogPage().route
-        parentNavigatorKey: _shellKey,
-        name: 'settings',
-        pageBuilder: (context, state) =>
-            noTransitionPageBuilder(context, state, const CarsCatalogPage()),
-      ),
-    ],
-  ),
+        GoRoute(
+          path: CarsCatalogPage
+              .route, // Здесь используй CarsCatalogPage.route вместо CarsCatalogPage().route
+          parentNavigatorKey: _shellKey,
+          name: 'cars',
+          pageBuilder: (context, state) =>
+              noTransitionPageBuilder(context, state, const CarsCatalogPage()),
+        ),
+      ]),
 ]);

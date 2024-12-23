@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/car.dart';
 
 class CarsCatalogPage extends StatefulWidget {
-  // Define the route as a constant string
-  static const route = '/carsCatalog';
+  static const route = '/carscatalog';
 
   const CarsCatalogPage({super.key});
 

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/carscatalogpage.dart';
 import 'package:go_router/go_router.dart';
-
-import 'carscatalogpage.dart';
-import 'newspage.dart';
 
 class HomePage extends StatefulWidget {
   final Widget child;
@@ -17,7 +15,7 @@ class _HomePageState extends State<HomePage> {
   void changeTab(int index) {
     switch (index) {
       case 0:
-        context.go(Newspage.route);
+        context.go('/');
         break;
       case 1:
         context.go(CarsCatalogPage.route);
@@ -37,9 +35,8 @@ class _HomePageState extends State<HomePage> {
           selectedIndex: currentIndex,
           onDestinationSelected: changeTab,
           destinations: const [
-            NavigationDestination(icon: Icon(Icons.newspaper), label: 'NEWS'),
-            NavigationDestination(
-                icon: Icon(Icons.directions_car), label: 'Cars'),
+            NavigationDestination(icon: Icon(Icons.newspaper), label: 'News'),
+            NavigationDestination(icon: Icon(Icons.car_rental), label: 'Cars'),
           ]),
     );
   }
