@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sup/pages/CarsCatalogPage.dart';
-import 'package:sup/pages/newspage.dart';
+
+import 'carscatalogpage.dart';
+import 'newspage.dart';
 
 class HomePage extends StatefulWidget {
   final Widget child;
@@ -16,10 +17,10 @@ class _HomePageState extends State<HomePage> {
   void changeTab(int index) {
     switch (index) {
       case 0:
-        context.go('${Newspage.route}');
+        context.go(Newspage.route);
         break;
       case 1:
-        context.go('${CarsCatalogPage.route}');
+        context.go(CarsCatalogPage.route);
         break;
     }
     setState(() {

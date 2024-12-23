@@ -3,10 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/carscatalogpage.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sup/pages/newspage.dart';
-import 'package:sup/pages/CarsCatalogPage.dart'; // Убедись, что этот импорт правильный
 
 import 'pages/homepage.dart';
+import 'pages/newspage.dart';
 
 final _parentKey = GlobalKey<NavigatorState>();
 final _shellKey = GlobalKey<NavigatorState>();

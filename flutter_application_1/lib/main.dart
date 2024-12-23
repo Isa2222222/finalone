@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/router.dart';
 // ignore: depend_on_referenced_packages
-import 'package:sup/router.dart';
 
 void main() {
   runApp(const MyApp());

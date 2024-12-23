@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sup/models/car.dart';
+
+import '../models/car.dart';
 
 class CarsCatalogPage extends StatefulWidget {
   // Define the route as a constant string
